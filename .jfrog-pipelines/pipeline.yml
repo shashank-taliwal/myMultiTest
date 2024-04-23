@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: deepak_git
-      path: creepy-pirate/jfrogMultiTest
+      path: shashank-taliwal/jfrogMultiTest
 pipelines:
   - name: hellopipe
     configuration:
