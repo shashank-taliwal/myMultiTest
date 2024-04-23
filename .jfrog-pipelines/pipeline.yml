@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: deepak_git
-      path: shashank-taliwal/jfrogMultiTest
+      path: shashank-taliwal/myMultiTest
 pipelines:
   - name: hellopipe
     configuration:
