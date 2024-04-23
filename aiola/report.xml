@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="50" failures="1" errors="0" time="2.711">
+  <testsuite name="HealthController" errors="0" failures="1" skipped="0" timestamp="2023-07-04T14:36:36" time="2.422" tests="1">
+    <testcase classname="HealthController healthcheck should return &quot;healthy&quot;" name="HealthController healthcheck should return &quot;healthy&quot;" time="0.008">
+      <failure>Error: Method not implemented.
+    at HealthController.isHealthy (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/packages/jargonix/backend/container-service/src/health/health.controller.ts:12:11)
+    at Object.&lt;anonymous&gt; (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/packages/jargonix/backend/container-service/src/health/health.controller.spec.ts:19:31)
+    at Promise.then.completed (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/utils.js:293:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/utils.js:226:10)
+    at _callCircusTest (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/run.js:297:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/run.js:233:3)
+    at _runTestsForDescribeBlock (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/run.js:135:9)
+    at _runTestsForDescribeBlock (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/run.js:130:9)
+    at _runTestsForDescribeBlock (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/run.js:130:9)
+    at run (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/run.js:68:3)
+    at runAndTransformResultsToJestFormat (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/Users/shaharcohen/Documents/repos/feature-jfrog-tests/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="ContainerTypeService" errors="0" failures="0" skipped="0" timestamp="2023-07-04T14:36:36" time="2.49" tests="11">
+    <testcase classname="ContainerTypeService should create container type" name="ContainerTypeService should create container type" time="0.002">
+    </testcase>
+    <testcase classname="ContainerTypeService should find all container types with pagination" name="ContainerTypeService should find all container types with pagination" time="0.001">
+    </testcase>
+    <testcase classname="ContainerTypeService should find nothing for tenant which does not exist" name="ContainerTypeService should find nothing for tenant which does not exist" time="0">
+    </testcase>
+    <testcase classname="ContainerTypeService should find nothing for existing tenant but unknown flow" name="ContainerTypeService should find nothing for existing tenant but unknown flow" time="0.001">
+    </testcase>
+    <testcase classname="ContainerTypeService should find container types by given flow id" name="ContainerTypeService should find container types by given flow id" time="0">
+    </testcase>
+    <testcase classname="ContainerTypeService should find one container type" name="ContainerTypeService should find one container type" time="0">
+    </testcase>
+    <testcase classname="ContainerTypeService should find nothing on tenant which does not exist" name="ContainerTypeService should find nothing on tenant which does not exist" time="0.008">
+    </testcase>
+    <testcase classname="ContainerTypeService should find nothing on existing tenant but unknown flow" name="ContainerTypeService should find nothing on existing tenant but unknown flow" time="0.001">
+    </testcase>
+    <testcase classname="ContainerTypeService should update existing container type" name="ContainerTypeService should update existing container type" time="0">
+    </testcase>
+    <testcase classname="ContainerTypeService should throw exception on update if id not found" name="ContainerTypeService should throw exception on update if id not found" time="0.001">
+    </testcase>
+    <testcase classname="ContainerTypeService should throw exception on update if tenant not found" name="ContainerTypeService should throw exception on update if tenant not found" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="ContainersService" errors="0" failures="0" skipped="0" timestamp="2023-07-04T14:36:36" time="2.506" tests="26">
+    <testcase classname="ContainersService createContainers should generate id and store all fields in db" name="ContainersService createContainers should generate id and store all fields in db" time="0.008">
+    </testcase>
+    <testcase classname="ContainersService createContainers should upsert document with new data" name="ContainersService createContainers should upsert document with new data" time="0.003">
+    </testcase>
+    <testcase classname="ContainersService createContainers should create one container" name="ContainersService createContainers should create one container" time="0.004">
+    </testcase>
+    <testcase classname="ContainersService createContainers should create two or more containers" name="ContainersService createContainers should create two or more containers" time="0.002">
+    </testcase>
+    <testcase classname="ContainersService createContainers should create document with children" name="ContainersService createContainers should create document with children" time="0.002">
+    </testcase>
+    <testcase classname="ContainersService createContainers should replace already created containers" name="ContainersService createContainers should replace already created containers" time="0.002">
+    </testcase>
+    <testcase classname="ContainersService FindAll should list all containers in one request" name="ContainersService FindAll should list all containers in one request" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService FindAll should limit containers count in findAll query" name="ContainersService FindAll should limit containers count in findAll query" time="0.002">
+    </testcase>
+    <testcase classname="ContainersService FindAll should list all containers with limit and token pagination" name="ContainersService FindAll should list all containers with limit and token pagination" time="0.002">
+    </testcase>
+    <testcase classname="ContainersService FindAll should list all containers of defined type" name="ContainersService FindAll should list all containers of defined type" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService FindAll should find nothing on non-existing tenantId" name="ContainersService FindAll should find nothing on non-existing tenantId" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService FindAll should find nothing on non-existing type" name="ContainersService FindAll should find nothing on non-existing type" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService FindOne should find one container by tenantId and id" name="ContainersService FindOne should find one container by tenantId and id" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService FindOne should find nothing by correct tenant but incorrect id" name="ContainersService FindOne should find nothing by correct tenant but incorrect id" time="0.013">
+    </testcase>
+    <testcase classname="ContainersService FindOne should find nothing by correct id but incorrect tenantId" name="ContainersService FindOne should find nothing by correct id but incorrect tenantId" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService FindChildren should find all children for root container" name="ContainersService FindChildren should find all children for root container" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService FindChildren should find all direct children for root container" name="ContainersService FindChildren should find all direct children for root container" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService FindChildren should find nothing for non-existing id" name="ContainersService FindChildren should find nothing for non-existing id" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService FindChildren should find nothing for non-existing tenantID" name="ContainersService FindChildren should find nothing for non-existing tenantID" time="0.002">
+    </testcase>
+    <testcase classname="ContainersService FindChildren should throw validation error on invalid level" name="ContainersService FindChildren should throw validation error on invalid level" time="0.002">
+    </testcase>
+    <testcase classname="ContainersService Remove should remove one container" name="ContainersService Remove should remove one container" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService Remove should recursively remove container and children" name="ContainersService Remove should recursively remove container and children" time="0.003">
+    </testcase>
+    <testcase classname="ContainersService Remove should throw exception on unsupported recursive flag" name="ContainersService Remove should throw exception on unsupported recursive flag" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService Remove should throw exception if container not found" name="ContainersService Remove should throw exception if container not found" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService Update should update all available for update fields" name="ContainersService Update should update all available for update fields" time="0.001">
+    </testcase>
+    <testcase classname="ContainersService Update should throw exception if container not found" name="ContainersService Update should throw exception if container not found" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="ContainerTypeController" errors="0" failures="0" skipped="0" timestamp="2023-07-04T14:36:36" time="2.511" tests="5">
+    <testcase classname="ContainerTypeController should be defined" name="ContainerTypeController should be defined" time="0.007">
+    </testcase>
+    <testcase classname="ContainerTypeController init mock implementation for create function should handle create container types request" name="ContainerTypeController init mock implementation for create function should handle create container types request" time="0.003">
+    </testcase>
+    <testcase classname="ContainerTypeController init mock implementation for findAll function should handle findAll request" name="ContainerTypeController init mock implementation for findAll function should handle findAll request" time="0.002">
+    </testcase>
+    <testcase classname="ContainerTypeController init mock implementation for findOne function should handle findOne request" name="ContainerTypeController init mock implementation for findOne function should handle findOne request" time="0.002">
+    </testcase>
+    <testcase classname="ContainerTypeController init mock implementation for update function should handle update request" name="ContainerTypeController init mock implementation for update function should handle update request" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="ContainersController" errors="0" failures="0" skipped="0" timestamp="2023-07-04T14:36:36" time="2.541" tests="7">
+    <testcase classname="ContainersController should be defined" name="ContainersController should be defined" time="0.006">
+    </testcase>
+    <testcase classname="ContainersController init mock createContainers function should handle createContainers request" name="ContainersController init mock createContainers function should handle createContainers request" time="0.003">
+    </testcase>
+    <testcase classname="ContainersController init mock findAll function should handle findAll request" name="ContainersController init mock findAll function should handle findAll request" time="0.002">
+    </testcase>
+    <testcase classname="ContainersController init mock findOne function should handle findOne request" name="ContainersController init mock findOne function should handle findOne request" time="0.003">
+    </testcase>
+    <testcase classname="ContainersController init mock findChildren function should handle findChildren request" name="ContainersController init mock findChildren function should handle findChildren request" time="0.002">
+    </testcase>
+    <testcase classname="ContainersController init mock update function should handle update request" name="ContainersController init mock update function should handle update request" time="0.002">
+    </testcase>
+    <testcase classname="ContainersController init mock remove function should handle remove request" name="ContainersController init mock remove function should handle remove request" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,55 @@
+# pipelines:
+#   - name: approval_gates
+#     steps:
+#       - name: random_approval_test
+#         type: Bash
+#         configuration:
+#           requiresApproval: true
+#         execution:
+#           onExecute:
+#             - echo "someboody approved this"
+#       - name: specific_approval_test
+#         type: Bash
+#         configuration:
+#           requiresApproval:
+#             approvers:
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#               - vootlac
+#           inputSteps:
+#             - name: random_approval_test
+#         execution:
+#           onExecute:
+#             - echo "someboody approved this"
+#       - name: short_approvers_list
+#         type: Bash
+#         configuration:
+#           requiresApproval:
+#             approvers:
+#               - vootlac
+#               - admin
+#               - vootlac
+#               - admin
+#           inputSteps:
+#             - name: specific_approval_test
+#         execution:
+#           onExecute:
+#             - echo "someboody approved this"

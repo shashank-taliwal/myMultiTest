@@ -1,0 +1,49 @@
+resources:
+  - name: rtBuildGitRepo
+    type: GitRepo
+    configuration:
+      gitProvider: vootla_git
+      path: ChaitanyaVootla/jfrogMultiTest
+      branches:
+        include: main
+pipelines:
+  - name: rt_playground
+    steps:
+      - name: docker_build
+        type: DockerBuild
+        configuration:
+          affinityGroup: docker_group
+          dockerFileLocation: utils
+          dockerFileName: Dockerfile
+          dockerImageName: jpd741896195.jfrogdev.org/buildsplayground/testimages
+          dockerImageTag: ${run_number}
+          inputResources:
+            - name: rtBuildGitRepo
+              trigger: false
+
+      - name: docker_push
+        type: Bash
+        configuration:
+          affinityGroup: docker_group
+          integrations:
+            - name: artVootla
+          inputSteps:
+            - name: docker_build
+        execution:
+          onExecute:
+            - docker images
+            - echo "running - jfrog rt dp jpd741896195.jfrogdev.org/buildsplayground/testimages:${run_number} buildsplayground --build-name=$pipeline_name --build-number=$run_number"
+            - jfrog rt dp jpd741896195.jfrogdev.org/buildsplayground/testimages:${run_number} buildsplayground --build-name=$pipeline_name --build-number=$run_number
+
+      - name: simple_artifact_push
+        type: Bash
+        configuration:
+          integrations:
+            - name: artVootla
+          inputSteps:
+            - name: docker_build
+        execution:
+          onExecute:
+            - touch "build_${run_number}.txt"
+            - echo "Hello World $run_number" > "build_${run_number}.txt"
+            - jfrog rt u "build_${run_number}.txt" buildsplayground/binaries/  --build-name=$pipeline_name --build-number=$run_number

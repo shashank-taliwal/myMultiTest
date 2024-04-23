@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SampleTestSuite" tests="1" failures="0" errors="0" skipped="0" timestamp="2023-12-14T00:00:00" hostname="localhost" time="0.123">
+    <properties>
+        <property name="java.vendor" value="Sun Microsystems Inc."/>
+        <property name="compiler.version" value="1.8"/>
+        <property name="os.name" value="Windows 10"/>
+        <property name="os.version" value="10.0"/>
+        <property name="os.arch" value="amd64"/>
+    </properties>
+    <testcase classname="com.example.SampleTest" name="testSampleMethod" time="0.123">
+        <!-- If there were any system outputs or errors, they would appear here -->
+        <!-- <system-out><![CDATA[system out message]]></system-out> -->
+        <!-- <system-err><![CDATA[system err message]]></system-err> -->
+    </testcase>
+</testsuite>

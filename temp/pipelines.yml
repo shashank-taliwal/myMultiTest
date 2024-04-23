@@ -1,0 +1,27 @@
+resources:
+  - name: xray_build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
+      buildName: asd
+      buildNumber: 1
+
+pipelines:
+  - name: xray_scan
+    steps:
+      - name: scan
+        type: XrayScan
+        configuration:
+          inputResources:
+            - name: xray_build_info
+              trigger: false
+        execution:
+          onStart:
+            - echo "Preparing for work..."
+            - echo "Prepping build environment"
+          onSuccess:
+            - echo "Job well done!"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete:
+            - echo "Cleaning up some stuff"

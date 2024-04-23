@@ -1,0 +1,11 @@
+<testsuites time="1" tests="3" name="Russian doll">
+    <testsuite tests="3" name="Russian doll lvl 1 (pre-defined)">
+        <testsuite tests="3" name="Russian doll lvl 2 (pre-defined)">
+            <testsuite tests="3" name="Russian doll lvl 3 (pre-defined)">
+                <testcase classname="What is russian doll in ruski">
+                    <failure type="NotEnoughFoo"> Matryoshka </failure>
+                </testcase>
+            </testsuite>
+        </testsuite>
+    </testsuite>
+</testsuites>

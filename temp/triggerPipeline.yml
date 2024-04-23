@@ -1,0 +1,34 @@
+resources:
+  - name: gitEmbed
+    type: GitRepo
+    configuration:
+      gitProvider: git
+      path: ChaitanyaVootla/ymlTest
+pipelines:
+  - name: trigger_pipeline
+    steps:
+      - name: triggerTest
+        type: TriggerPipeline
+        configuration:
+          pipelineName: embed_target # required
+          stepName: embed_target # required. will fail the step if ambiguous
+          integrations:
+            - name: pipAccess
+          inputResources:
+           - name: gitEmbed
+        execution:
+          onStart:
+            - echo “triggering the nested run”
+          onSuccess:
+            - echo “it worked! $nested_run_status”
+          onFailure:
+            - echo “it failed... $nested_run_status”
+          onComplete:
+            - echo “sending some messages...”
+  - name: embed_target
+    steps:
+      - name: embed_target
+        type: Bash
+        execution:
+          onExecute:
+            - echo "trigger target done execution"

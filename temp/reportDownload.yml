@@ -1,0 +1,20 @@
+pipelines:
+  - name: download_report
+    steps:
+      - name: trigger_2
+        type: Bash
+        execution:
+          onExecute:
+            - printenv
+            - echo "done"
+            - write_output propertyCanvas "description=\"hello world\""
+            - add_pipeline_variables prev_runid=$run_id
+            - touch testreport.xml
+            - save_tests testreport.xml
+            - echo runs > cache.file
+            - add_cache_files cache.file runs.file
+            - echo "state=pipeline2" > cache.txt
+            - add_run_files cache.txt run_state_file
+            - add_pipeline_files cache.txt pipe_state_file
+            - write_output propertyCanvas "pipelines=$run_id"
+            - save_tests cache.txt

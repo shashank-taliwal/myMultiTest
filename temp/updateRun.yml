@@ -1,0 +1,32 @@
+resources:
+  - name: runTracker
+    type: PropertyBag
+    configuration:
+      Hello: World
+  - name: runTracker2
+    type: PropertyBag
+    configuration:
+      Hello2: World2
+pipelines:
+  - name: resource_update
+    steps:
+      - name: resource_update_test_number
+        type: Bash
+        configuration:
+          outputResources:
+            - name: runTracker
+        execution:
+          onExecute:
+            - write_output runTracker "pipelines=$run_number"
+            - write_output runTracker "runId=$run_id"
+      - name: resource_update2
+        type: Bash
+        configuration:
+          outputResources:
+            - name: runTracker2
+          inputSteps:
+            - name: resource_update_test_number
+        execution:
+          onExecute:
+            - write_output runTracker2 "pipelines=$run_number"
+            - write_output runTracker2 "runId=$run_id"

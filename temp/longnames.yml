@@ -1,0 +1,9 @@
+pipelines:
+  - name: super_long_pipeline_name_super_long_pipeline_name_super_long_pipeline_name_super_long_pipeline_name
+    steps:
+      - name: super_long_step_name_super_long_step_name_super_long_step_name_super_long_step_name_super_long_step_name
+        type: Bash
+        execution:
+          onExecute:
+            - printenv
+            - echo "done"
