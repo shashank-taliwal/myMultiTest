@@ -1,0 +1,66 @@
+resources:
+  - name: deepakRepo
+    type: GitRepo
+    configuration:
+      gitProvider: deepak_git
+      path: creepy-pirate/jfrogMultiTest
+pipelines:
+  - name: hellopipe
+    configuration:
+      environmentVariables:
+        readOnly:
+          reportsCount: 10
+          suitesCount: 10
+      retentionPolicy:
+        maxAgeDays: 1
+    steps:
+      - name: test_report
+        type: Bash
+        configuration:
+          inputResources:
+            - name: deepakRepo
+        execution:
+          onExecute:
+            - cd $res_deepakRepo_resourcePath
+            - echo "test"
+            - ls -a
+            # - npm install
+            # - touch .env
+            # - echo "REPORTS_COUNT=$reportsCount" >> .env
+            # - echo "SUITES_COUNT=$suitesCount" >> .env
+            # - TOTAL_TESTS=$(($reportsCount*$suitesCount))
+            # - update_run_description "Total tests => $TOTAL_TESTS"
+            # - set_run_name $TOTAL_TESTS
+            # - npm run test
+            - save_tests $res_deepakRepo_resourcePath/utils/singleTest.xml
+          onSuccess:
+            - echo "success"
+      - name: test_report_with_hidden_folder
+        type: Bash
+        configuration:
+          inputResources:
+            - name: deepakRepo
+        execution:
+          onExecute:
+            - cd $res_deepakRepo_resourcePath
+            - echo "test"
+            # - npm install
+            # - touch .env
+            # - echo "REPORTS_COUNT=$reportsCount" >> .env
+            # - echo "SUITES_COUNT=$suitesCount" >> .env
+            # - TOTAL_TESTS=$(($reportsCount*$suitesCount))
+            # - update_run_description "Total tests => $TOTAL_TESTS"
+            # - set_run_name $TOTAL_TESTS
+            # - npm run test
+            - save_tests $res_deepakRepo_resourcePath/.idea/hiddenTest.xml
+            - ls -a
+          onSuccess:
+            - echo "success"
+      - name: no_test_reports
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: test_report
+        execution:
+          onExecute:
+            - echo "done"
